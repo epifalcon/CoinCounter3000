@@ -1,2 +1,11 @@
 11-7-26
  We made a repository to have a place to write code for our project of making a machine that can see a picture of coins and calculate their values. We made this repository on a site called Github.
+
+Research: We used Copiolet to guide us on the building blocks on how to make our machine, we decided that we'r going to use python 3 which is a languege that computers understand widly, the next thing we did is that we made sure that our phython3 libraries were installed and updated.
+
+python3.13
+pip26.3
+opencv4.12.0.88
+numpie2.2.6
+
+Summary:today we made a program that can take pictures but next time we hope that we can make it able to see what are coins and what are not.
