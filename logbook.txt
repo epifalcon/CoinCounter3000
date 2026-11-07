@@ -1,0 +1,2 @@
+11-7-26
+ We made a repository to have a place to write code for our project of making a machine that can see a picture of coins and calculate their values. We made this repository on a site called Github.
