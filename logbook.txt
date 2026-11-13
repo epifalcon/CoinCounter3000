@@ -9,3 +9,16 @@ opencv4.12.0.88
 numpie2.2.6
 
 Summary:today we made a program that can take pictures but next time we hope that we can make it able to see what are coins and what are not.
+
+11-13-26
+Research: We asked Gemani for stragies to identfy a coin and it told us some ideas how to do that like turning the picture gray scale, edge detection, and using the size of the coins from smallest to biggest to identfy coins.
+
+We updated the program and now it looks for coins and processess the image grayside, it thinks of the coins as circles, and it looks for and tries to find circles for it to count and then counts them. 
+
+We ran the program and we saw it acually looked for the coins and once it found them it counted how many it saw. we showed it three coins and when it registerd the circles it counted how many shown.
+
+When we ran the program, we had a white paper underneath the coins. we did that because we wanted it to avoid focusing on the background because it might mistake other things for coins and we want the coins to stand out to the computer. when we diddnt have the white paper it couldnt find coins so circles popped up everywere on the pucture. 
+
+When we ran it again we tried to take a picture but the computers visual work didnt show up in the saved image then we chaged the function to save the modified version instead.
+
+We updated the program so now it differentiates coins and sums the total,  we ran the expieriment whith a mic stand holding the camara, we saw it show the number of coins and their value.  when we added more,  it added another number to the values and showd another coin. it didnt count the right value but it got the coins mixed up for example the penny and dime got mixed up with eachother. 
