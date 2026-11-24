@@ -3,7 +3,7 @@
  We made this repository on a site called Github.
 
 Research: We used Copiolet to guide us on the building blocks on how to make our machine, we decided that we'r going to use python 3 which is a
- languege that computers understand widly,the next thing we did is that we made sure that our phython3 libraries were installed and updated.
+ languege that computers understand widly,the next thing we did is that we made sure that our phython 3 libraries were installed and updated.
 
 python3.13
 pip26.3
@@ -37,9 +37,15 @@ We updated the program so now it differentiates coins and sums the total,  we ra
  
  # Test cases
  1. we put a white paper down and put four coins on top NO additional objects
- 2. after we put additional circle like objects to try and trike it
+ 2. after we put additional circle like objects to try and trick it
  3. counterfeight money
  4. lights off
  5. no white paper
  6. extra bright light\glare
  
+ 11-24-26
+ When we started to test our code, we ran into a problem. Our tolenerce for detection was actully set to 8 percent. 
+ So we changed it to 4 percent and when that did't work we went even further to 2 percent and still got problems. 
+ we asked copiolet for help and it said to turn up the sensitivty and size radius to tighten the dection range.
+ 
+We ran our six test cases each 3 times and every single time counted them incorrectly, or didn't count them as coins, or flipped them
