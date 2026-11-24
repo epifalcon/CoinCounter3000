@@ -14,7 +14,7 @@ COIN_TYPES = {
     ord("d"): ("Dime", 10, 17.91),
     ord("r"): ("Quarter", 25, 24.26),
 }
-SIZE_TOLERANCE = 0.08
+DEFAULT_SIZE_TOLERANCE = 0.08
 
 
 def parse_args() -> argparse.Namespace:
@@ -63,6 +63,12 @@ def parse_args() -> argparse.Namespace:
         default=0,
         help="known camera scale; otherwise calibrate in the preview with a known coin",
     )
+    parser.add_argument(
+        "--size-tolerance",
+        type=float,
+        default=DEFAULT_SIZE_TOLERANCE,
+        help="maximum relative coin diameter error (0 to 1, default: 0.08)",
+    )
     return parser.parse_args()
 
 
@@ -97,6 +103,7 @@ def find_coins(
 def classify_coins(
     circles: list[tuple[int, int, int]],
     pixels_per_mm: float,
+    size_tolerance: float,
 ) -> list[tuple[int, int, int, str, int]]:
     if pixels_per_mm <= 0:
         return []
@@ -110,7 +117,7 @@ def classify_coins(
         )
         name, value_cents, expected_diameter_mm = denomination
         relative_error = abs(diameter_mm - expected_diameter_mm) / expected_diameter_mm
-        if relative_error <= SIZE_TOLERANCE:
+        if relative_error <= size_tolerance:
             classified.append((x, y, radius, name, value_cents))
     return classified
 
@@ -208,6 +215,9 @@ def main() -> int:
     if args.pixels_per_mm < 0:
         print("--pixels-per-mm must be zero or greater.")
         return 2
+    if not 0 <= args.size_tolerance <= 1:
+        print("--size-tolerance must be between zero and one.")
+        return 2
 
     camera = cv2.VideoCapture(args.camera)
 
@@ -248,7 +258,7 @@ def main() -> int:
                 args.sensitivity,
             )
             coins = (
-                classify_coins(circles, pixels_per_mm)
+                classify_coins(circles, pixels_per_mm, args.size_tolerance)
                 if pixels_per_mm > 0
                 else []
             )

@@ -49,5 +49,8 @@ python3 camera_capture.py --min-radius 20 --max-radius 90 --min-distance 45
 
 `--max-radius 0` means no maximum. A lower `--sensitivity` may detect more coins
 but can also add false detections. To skip interactive calibration, provide a
-known camera scale with `--pixels-per-mm`. Use `--output-dir PATH` to choose
-another folder for saved photos.
+known camera scale with `--pixels-per-mm`. Use `--size-tolerance` to set the
+maximum relative diameter error accepted for a coin (default `0.08`, or 8%).
+For example, `--size-tolerance 0.05` accepts coins within 5% of the expected
+diameter; a lower value may filter out borderline detections. Use
+`--output-dir PATH` to choose another folder for saved photos.
